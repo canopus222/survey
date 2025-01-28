@@ -2,7 +2,10 @@
 
 : override content -> {
 
-<h1 style="padding: 70px; text-align: center; font-size: 40px; line-height: 1; letter-spacing: -2px;">お酒に関するアンケート</h1>
+<h1 style="padding: 70px; text-align: center; font-size: 30px; line-height: 1; letter-spacing: -2px;">
+  お酒に関する<br>
+  アンケート
+</h1>
 
 <hr />
 
