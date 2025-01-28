@@ -21,7 +21,7 @@ post '/confirm' => sub {
     my $name    = $params->{name};
     my $age     = $params->{age};
     my $job     = $params->{job};
-    my $drinks  = $params->{'drinks'};
+    my $drinks  = $params->{drinks};
     my $remarks = $params->{remarks};
 
     return $c->render('confirm.tx', {
@@ -31,6 +31,31 @@ post '/confirm' => sub {
         drinks        => $drinks,
         remarks       => $remarks,
     });
+};
+
+# 回答完了ページ
+post '/submit' => sub {
+    my ($c) = @_;
+
+    # フォームから送られたデータを取得
+    my $params = $c->req->parameters;
+    my $name    = $params->{name};
+    my $age     = $params->{age};
+    my $job     = $params->{job};
+    my $drinks  = $params->{drinks};
+    my $remarks = $params->{remarks};
+
+    # データベースに保存する処理
+    $c->db->insert(survey => {
+        name    => $name,
+        age     => $age,
+        job     => $job,
+        drinks  => $drinks,
+        remarks => $remarks,
+    });
+
+    # 完了ページを表示
+    return $c->render('completion.tx');
 };
 
 
