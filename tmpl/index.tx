@@ -2,25 +2,32 @@
 
 : override content -> {
 
-<h1 style="padding: 70px; text-align: center; font-size: 40px; line-height: 1; letter-spacing: -2px;">回答入力ページ</h1>
+<h1 style="padding: 70px; text-align: center; font-size: 30px; line-height: 1; letter-spacing: -2px;">
+    お酒に関する<br>
+    アンケート<br>
+    回答入力ページ
+</h1>
 
 <hr />
 
 <form method="post" action="/confirm">
     <div class="form-group">
         <label for="name">氏名:</label>
+        <span style="color: white; background-color: red; padding: 3px 8px; font-size: 14px; border-radius: 5px; margin-left: 10px;">必須</span>
         <!-- requiredでも必須項目を明示 -->
         <input type="text" id="name" name="name" class="form-control" required>
     </div>
 
     <div class="form-group">
         <label for="age">年齢:</label>
+        <span style="color: white; background-color: red; padding: 3px 8px; font-size: 14px; border-radius: 5px; margin-left: 10px;">必須</span>
         <!-- min maxで非現実的な値入力防止 -->
         <input type="number" id="age" name="age" class="form-control" min="1" max="120" required>
     </div>
 
     <div class="form-group">
         <label for="job">職業:</label>
+        <span style="color: white; background-color: red; padding: 3px 8px; font-size: 14px; border-radius: 5px; margin-left: 10px;">必須</span>
         <select id="job" name="job" class="form-control" required>
             <option value="">選択してください</option>
             <option value="会社員">会社員</option>
@@ -33,6 +40,7 @@
 
     <div class="form-group">
         <label for="drinks">よく飲むお酒:</label>
+        <span style="color: white; background-color: red; padding: 3px 8px; font-size: 14px; border-radius: 5px; margin-left: 10px;">必須</span>
         <select name="drinks" id="drinks" class="form-control" required>
             <option value="">選択してください</option>
             <option value="ビール">ビール</option>
@@ -46,11 +54,14 @@
     </div>
 
     <div class="form-group">
-        <label for="remarks">備考:</label><br>
+        <label for="remarks">備考:</label>
+        <span style="color: white; background-color: orange; padding: 3px 8px; font-size: 14px; border-radius: 5px; margin-left: 10px;">任意</span>
         <textarea id="remarks" name="remarks" class="form-control" rows="4" cols="50"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary" style="padding: 10px 20px; font-size: 16px;">確認</button>
+    <div style="text-align: center;">
+        <button type="submit" class="btn btn-primary" style="padding: 10px 20px; font-size: 16px;">確認</button>
+    </div>
 </form>
 
 : }
