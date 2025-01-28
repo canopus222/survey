@@ -1,0 +1,49 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+
+<h1 style="padding: 70px; text-align: center; font-size: 40px; line-height: 1; letter-spacing: -2px;">回答確認ページ</h1>
+
+<hr />
+
+<form method="post" action="/submit">
+    <div class="form-group">
+        <label>氏名:</label>
+        <p><: $name :></p>
+        <input type="hidden" name="name" value="<: $name :>">
+    </div>
+
+    <div class="form-group">
+        <label>年齢:</label>
+        <p><: $age :></p>
+        <input type="hidden" name="age" value="<: $age :>">
+    </div>
+
+    <div class="form-group">
+        <label>職業:</label>
+        <p><: $job :></p>
+        <input type="hidden" name="job" value="<: $job :>">
+    </div>
+
+    <div class="form-group">
+        <label>よく飲むお酒:</label>
+        <p><: $drinks :></p>
+        <input type="hidden" name="drinks" value="<: $drinks :>">
+    </div>
+
+    <div class="form-group">
+        <label>備考:</label>
+        <p><: $remarks :></p>
+        <input type="hidden" name="remarks" value="<: $remarks :>">
+    </div>
+
+    <div style="display: flex; justify-content: space-between;">
+        <!-- 戻るボタン「history.back();」で直前ページに戻る -->
+        <button type="button" class="btn btn-secondary" style="padding: 10px 20px; font-size: 16px;" onclick="history.back();">戻る</button>
+        
+        <!-- 送信ボタン -->
+        <button type="submit" class="btn btn-primary" style="padding: 10px 20px; font-size: 16px;">送信</button>
+    </div>
+</form>
+
+: }

@@ -6,7 +6,7 @@
 
 <hr />
 
-<form method="post" action="/submit_answer">
+<form method="post" action="/confirm">
     <div class="form-group">
         <label for="name">氏名:</label>
         <!-- requiredでも必須項目を明示 -->
@@ -32,28 +32,17 @@
     </div>
 
     <div class="form-group">
-        <label>よく飲むお酒:</label><br>
-        <div class="checkbox">
-            <label><input type="checkbox" name="drinks" value="ビール"> ビール</label>
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox" name="drinks" value="ワイン"> ワイン</label>
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox" name="drinks" value="シャンパン"> シャンパン</label>
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox" name="drinks" value="日本酒"> 日本酒</label>
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox" name="drinks" value="紹興酒"> 紹興酒</label>
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox" name="drinks" value="焼酎"> 焼酎</label>
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox" name="drinks" value="ウイスキー"> ウイスキー</label>
-        </div>
+        <label for="drinks">よく飲むお酒:</label>
+        <select name="drinks" id="drinks" class="form-control" required>
+            <option value="">選択してください</option>
+            <option value="ビール">ビール</option>
+            <option value="ワイン">ワイン</option>
+            <option value="シャンパン">シャンパン</option>
+            <option value="日本酒">日本酒</option>
+            <option value="紹興酒">紹興酒</option>
+            <option value="焼酎">焼酎</option>
+            <option value="ウイスキー">ウイスキー</option>
+        </select>
     </div>
 
     <div class="form-group">
@@ -61,7 +50,7 @@
         <textarea id="remarks" name="remarks" class="form-control" rows="4" cols="50"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary" style="padding: 10px 20px; font-size: 16px;">送信</button>
+    <button type="submit" class="btn btn-primary" style="padding: 10px 20px; font-size: 16px;">確認</button>
 </form>
 
 : }
