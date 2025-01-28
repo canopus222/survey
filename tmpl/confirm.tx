@@ -2,42 +2,47 @@
 
 : override content -> {
 
-<h1 style="padding: 70px; text-align: center; font-size: 40px; line-height: 1; letter-spacing: -2px;">回答確認ページ</h1>
+<h1 style="padding: 70px; text-align: center; font-size: 30px; line-height: 1; letter-spacing: -2px;">回答確認ページ</h1>
 
 <hr />
 
 <form method="post" action="/submit">
     <div class="form-group">
         <label>氏名:</label>
-        <p><: $name :></p>
+        <span style="background-color: red; color: white; padding: 3px 6px; font-size: 12px; border-radius: 5px;">必須</span>
+        <p style="background-color: #f2f2f2; padding: 5px; border-radius: 5px;"><: $name :></p>
         <input type="hidden" name="name" value="<: $name :>">
     </div>
 
     <div class="form-group">
         <label>年齢:</label>
-        <p><: $age :></p>
+        <span style="background-color: red; color: white; padding: 3px 6px; font-size: 12px; border-radius: 5px;">必須</span>
+        <p style="background-color: #f2f2f2; padding: 5px; border-radius: 5px;"><: $age :></p>
         <input type="hidden" name="age" value="<: $age :>">
     </div>
 
     <div class="form-group">
         <label>職業:</label>
-        <p><: $job :></p>
+        <span style="background-color: red; color: white; padding: 3px 6px; font-size: 12px; border-radius: 5px;">必須</span>
+        <p style="background-color: #f2f2f2; padding: 5px; border-radius: 5px;"><: $job :></p>
         <input type="hidden" name="job" value="<: $job :>">
     </div>
 
     <div class="form-group">
         <label>よく飲むお酒:</label>
-        <p><: $drinks :></p>
+        <span style="background-color: red; color: white; padding: 3px 6px; font-size: 12px; border-radius: 5px;">必須</span>
+        <p style="background-color: #f2f2f2; padding: 5px; border-radius: 5px;"><: $drinks :></p>
         <input type="hidden" name="drinks" value="<: $drinks :>">
     </div>
 
     <div class="form-group">
         <label>備考:</label>
-        <p><: $remarks :></p>
+        <span style="background-color: orange; color: white; padding: 3px 6px; font-size: 12px; border-radius: 5px;">任意</span>
+        <p style="background-color: #f2f2f2; padding: 5px; border-radius: 5px;"><: $remarks :></p>
         <input type="hidden" name="remarks" value="<: $remarks :>">
     </div>
 
-    <div style="display: flex; justify-content: space-between;">
+    <div style="display: flex; justify-content: center; gap: 20px;">
         <!-- 戻るボタン「history.back();」で直前ページに戻る -->
         <button type="button" class="btn btn-secondary" style="padding: 10px 20px; font-size: 16px;" onclick="history.back();">戻る</button>
         
